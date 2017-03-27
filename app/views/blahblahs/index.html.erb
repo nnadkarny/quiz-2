@@ -1,8 +1,18 @@
-    <h1 class="my-headline">Heeeeere's web app!</h1>
-    <br />
-    <br />
-    <li>Here's some static content!</li>
-    <br />
-    <li>Here's some MORE static content!</li>
+<h1 class="my-headline">Heeeeere's web app!</h1>
+<br />
+<br />
+<li>Here's some static content!</li>
+<br />
+<li>Here's some MORE static content!</li>
 
-    
+<hr />
+
+<button class="new-dealio-button"><%= link_to 'Create a new Dealio!', new_dealio_path %></button>
+
+<h2 class="dealios-display">Current Dealios (click them!)</h2>
+
+<% @dealios.each do |dealio| %>
+  <h3 class="dealio-listing">
+    <%= link_to dealio.title, dealio_path(dealio) %>
+  </h3>
+<% end %>
